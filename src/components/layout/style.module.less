@@ -1,0 +1,57 @@
+@import '../../assets/less/color';
+@import '../../assets/less/baseValue.less';
+:global {
+    .layout {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        .sider {
+            z-index: 49;
+            flex: 0 0 auto;
+            height: calc(100vh - 96px);
+            width: 160px;
+            margin: 0 3px @baseGutter @baseGutter;
+            background-color: #fff;
+            position: sticky !important;
+            padding: @baseGutter 0;
+            top: 0;
+            transition: width .3s;
+            border-radius: 2px;
+            &.siderHidden {
+                width: 0px;
+                & + .layoutContent {
+                    width: calc(100% - 9px);
+                }
+            }
+            & + .layoutContent{
+                flex: 0 0 auto;
+                width: calc(100% - 169px);
+                overflow-x: hidden;
+                transition: width 0s linear .3s;
+            }
+            .siderChildren {
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                white-space: nowrap;;
+            }
+            .siderFlexBtn {
+                position: absolute;
+                right: -9px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
+            .layoutContent {
+                flex: 1;
+                height: 100%;
+                overflow: visible;
+                overflow-y: visible;
+            }
+
+        }
+    }
+    .kyzHeadBar + div .sider {
+        height: calc(100vh - 48px);
+    }
+}

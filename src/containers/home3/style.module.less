@@ -1,0 +1,170 @@
+@import'~assets/less/color';
+:root {
+    --menuBgColor: #272833;
+    --menuPanelBgColor: #2F313E;
+}
+
+.appContainer {
+    height: 100%;
+    margin:  0 auto;
+    background-color:  #F2F6FD;
+}
+.header{
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    background-color: var(--menuBgColor);
+    flex-shrink: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    transition: 0.5s;
+    .logo {
+       cursor: pointer;
+       display: flex;
+       align-items: center;
+       margin-right: 12px;
+       line-height: 1;
+       span:last-child {
+        font-size: 20px;
+        color: #ffffff;
+       }
+    }
+}
+
+.headBar {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    background-color: pink;
+    position: fixed;
+    top: 48px;
+    z-index: -1;
+}
+
+
+.content {
+    margin-top: 90px;
+    height: calc(100%-90px);
+    background-color: #F2F6FD;
+    overflow: auto;
+    overflow-y: overlay;
+
+}
+
+.head {
+    height: 90px;
+}
+
+.menu {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    .navItem {
+        line-height: 50px;
+        box-sizing: border-box;
+        text-align: left;
+        font-family: 'Microsoft YaHei';
+        color: #EFF0F1;
+        margin-right: 18px;
+        >a {
+            height: 100%;
+            display: block;
+            color:#EFF0F1;
+            font-size: 14px;
+            font-feature-settings: 'tnum';
+            pointer-events: none;
+            cursor: auto;
+        }
+        >.activeClassName {
+            font-weight: 700;
+        }
+        &:hover {
+            color: #128bfb;
+            >a {
+                color: #128bfb;
+            }
+        }
+    }
+}
+
+:global {
+    .ant-dropdown-placement-bottomLeft {
+        top: 50px;
+    }
+    .ant-ddropdown-open {
+        
+    }
+}
+
+.wrapper {
+    display: flex;
+    margin-top: -4px;
+    padding: 5;
+    background-color: var(--menuPanelBgColor);
+    border-radius: 0 0 2px 2px;
+    cursor: default;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 999;
+    .module {
+        position: 6px 12px;
+        font-size: 14px;
+        font-family: 'Microsoft YaHei';
+        .nameBox {
+            width: 100%;
+            height: 28px;
+            .name {
+                font-family: Microsoft YaHei;
+                font-size: 14px;
+                color: #EDEEEF;
+                letter-spacing: 1px;
+                line-height: 28px;
+                display: block;
+                height: 30px;
+                font-weight: bold;
+                margin-left: 6px;
+                text-align: left;
+                border-bottom: 1px solid #636373;
+            }
+        }
+        .item {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            .disableClassName {
+                opacity: 0.3;
+                color: #7C7C7C;
+                cursor: no-drop;
+            }
+            .defaultClassName,
+            .activeClassName {
+                color: #C2C4CF;
+                line-height: 30px;
+                font-size: 13px;
+                text-align: left;
+                cursor: default;
+                padding: 0 6px;
+                &:hover{
+                    color: #128BfB;
+                    cursor: pointer;
+                }
+            }
+            .activeClassName {
+                color: #128BfB !important;
+            }
+        }
+    }
+    .line:last-child{
+        display: none;
+    }
+}
+

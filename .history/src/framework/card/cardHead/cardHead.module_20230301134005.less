@@ -1,0 +1,63 @@
+@import '../../../assets/less/baseValue.less';
+@import '../../../assets/less/color.less';
+.cardHead {
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2 * @baseGutter;
+    background-color: #fff;
+    .title {
+        position: relative;
+        padding-left: 10px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 16px;
+        color: @fontColor;
+        &.titleBorder::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 16px;
+            background: @cardTitleBefore;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0px;
+        }
+        .hoverMsgContent {
+            position: absolute;
+            right: -18px;
+            top: -1px;
+        }
+        @media print {
+            .hoverMsgContent {
+                display: none;
+            }
+        }
+    }
+    .nopadingLeft {
+        position: relative;
+        padding-left: 0px;
+        height: 36px;
+        line-height: 28px;
+        font-size: 16px;
+        color: @fontColor;
+    }
+    :global {
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .antion {
+                // margi÷n-left: 18px;
+            }
+        }
+    }
+    .more {
+        //
+        width: 30px;
+        height: 20px;
+        float: right;
+    }
+}   

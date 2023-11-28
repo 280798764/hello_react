@@ -1,0 +1,102 @@
+@import '../../assets/less/color.less';
+@import '../../assets/less/baseValue.less';
+
+.customAnchor {
+     .firstItem,
+     .sliderLevelTop,
+     .secondItem {
+        height: 24px;
+        line-height: 24px;
+        font-size: 14px;
+        border-left: 3px solid transparent;
+        color: #333;
+     }
+     
+     .title {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        &:hover {
+            color: @primaryColor;
+        }
+     }
+
+     .firstItem {
+        padding-left: 21px;
+        font-weight: bold;
+     }
+
+     .sliderLevelTop {
+        padding-left: 21px;
+
+        :global {
+            .title {
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                &:hover {
+                    color: @primaryColor;
+                }
+            
+            }
+        }
+     }
+
+     .secondItem {
+        padding-left: 33px;
+     }
+
+     .active {
+        background-image: linear-gradient(270deg, rgba(68, 129, 195, 0), rgba(85, 140, 255, .12));
+        border-left-color: @primaryColor;
+
+        .title {
+            color: @primaryColor;
+        }
+     }
+
+     :global {
+         
+        // antd Tree 组件样式修改
+        .ant-tree.ant-tree-directory {
+            .ant-tree-treenode-selected {
+                background-image: none !important;
+                &::before {
+                    background-color: transparent;
+                }
+            }
+            .ant-tree-treenode {
+                margin: 0 0 6px 0;
+                padding: 0;
+            }
+
+            &::before {
+                display: none;
+                background: pink !important;
+            }
+        }
+
+        .ant-tree .ant-tree-node-content-wrapper {
+            padding: 0;
+        }
+
+        .ant-tree-switcher {
+            height: 24px;
+        }
+
+        .ant-tree.ant-tree-block-node .ant-tree-list-holder-inner .ant-tree-node-content-wrapper {
+            position: absolute;
+            width: 100%;
+        }
+        .sub-tree-node {
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 98%;
+        }
+     }
+    }

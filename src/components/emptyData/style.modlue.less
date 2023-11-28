@@ -1,0 +1,67 @@
+@import '../../assets/less/color.less';
+:global {
+    .commonEmptyData, .fixedEmptyData {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        text-align: center;
+        line-height: 0;
+        font-size: 10px;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        .svgIcon {
+           cursor: default;
+           line-height: 0;
+           margin-bottom: 10px;
+        }
+        p {
+            color: @disableColor;
+            line-height: 1;
+        }
+        &.resetAntdEmpty {
+            position: relative;
+            margin: 32px 0;
+            transform: none;
+            left: 0;
+            top: 0;
+        }
+        &.lg{
+            .svgIcon {
+                width: 254px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+        &.md {
+            .svgIcon {
+                width: 182px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+        &.sm {
+            .svgIcon{
+                width: 98px;
+            }
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .fixedEmptyData {
+        min-height: 300px;
+        position: initial;
+        transform: initial;
+        padding-top: 96px;
+    }
+
+    .selectHeight {
+        min-height: 100px;
+        position: initial;
+        transform: initial;
+    }
+}
